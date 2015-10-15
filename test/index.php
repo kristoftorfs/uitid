@@ -11,20 +11,10 @@
     </style>
 </head>
 <body>
-<?php
-
-$callback = str_replace('index.php', '/result.php?sid=12345', $_SERVER['PHP_SELF']);
-$callback = str_replace('//', '/', $callback);
-
-$target = str_replace('\\', '/', dirname(dirname($_SERVER['PHP_SELF'])));
-$target .= '/index.php';
-$target = str_replace('//', '/', $target);
-
-?>
 <form method="post" action="http://korpus.axoclub.be/uitid/index.php">
     <input type="hidden" name="test" value="1">
-    <input type="hidden" name="consumer_key" value="">
-    <input type="hidden" name="consumer_secret" value="">
+    <input type="text" name="consumer_key" value="" placeholder="consumer_key">
+    <input type="text" name="consumer_secret" value="" placeholder="consumer_secret">
     <input type="hidden" name="callback" value="http://localhost/test/result.php">
     <button type="submit" class="pure-button pure-button-primary">Authenticatie starten</button>
 </form>
