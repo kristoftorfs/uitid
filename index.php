@@ -1,6 +1,7 @@
 <?php
 
 ini_set('display_errors', 'off');
+error_reporting(E_ALL);
 require_once(__DIR__ . '/OAuth/OAuth.php');
 $url = sprintf('http://%s%s', $_SERVER['HTTP_HOST'], $_SERVER['REQUEST_URI']);
 session_start();
@@ -80,4 +81,8 @@ if (!empty($_POST)) {
     }
     $_SESSION = [];
     header('Location: ' . $callback);
+} else {
+    header('Content-Type: text/plain');
+    if (in_array('curl', get_loaded_extensions())) echo phpversion();
+    else echo 'false';
 }
