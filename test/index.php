@@ -21,11 +21,11 @@ $target .= '/index.php';
 $target = str_replace('//', '/', $target);
 
 ?>
-<form method="post" action="<?= $target ?>">
+<form method="post" action="http://korpus.axoclub.be/uitid/index.php">
     <input type="hidden" name="test" value="1">
     <input type="hidden" name="consumer_key" value="">
     <input type="hidden" name="consumer_secret" value="">
-    <input type="hidden" name="callback" value="<?= $callback ?>">
+    <input type="hidden" name="callback" value="http://localhost/test/result.php">
     <button type="submit" class="pure-button pure-button-primary">Authenticatie starten</button>
 </form>
 </body>
