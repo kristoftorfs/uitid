@@ -73,13 +73,13 @@ if (!empty($_POST)) {
         $callback['query'] = http_build_query(array_merge($query, $values));
         $callback = unparse_url($callback);
     } else {
-        $values = ['error' => 1];
+        $values = array('error' => 1);
         $callback = parse_url($_SESSION['callback']);
         parse_str($callback['query'], $query);
         $callback['query'] = http_build_query(array_merge($query, $values));
         $callback = unparse_url($callback);
     }
-    $_SESSION = [];
+    $_SESSION = array();
     header('Location: ' . $callback);
 } else {
     header('Content-Type: text/plain');
